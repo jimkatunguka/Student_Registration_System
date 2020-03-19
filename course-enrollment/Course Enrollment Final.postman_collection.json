@@ -1,0 +1,608 @@
+{
+	"info": {
+		"_postman_id": "b511d169-0f84-4344-aa54-ef927135455c",
+		"name": "Course Enrollment Final",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Student ",
+			"item": [
+				{
+					"name": "Add Enrollments By a student Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqaW0iLCJyb2xlcyI6WyJST0xFX1NUVURFTlQiXSwiaXNzIjoid2luZC1ncm91cCIsImV4cCI6MTU4NTQxODA5NSwiaWF0IjoxNTg0NTU0MDk1fQ.jCa8gtM5JiQeTFgcQLqYfv-IFLY2PGuN7pOhbqr-Fns350GaJaj8dIY3ogqiPx7G7DaOvwvbxV7N3ovEDPwN8g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwaGlsIiwiaXNzIjoid2luZC1ncm91cCIsImV4cCI6MTU4NTM3NTAyNiwiaWF0IjoxNTg0NTExMDI2fQ.9UzmCUJPQKHoT9AwBBQH-v3cmy5TIT5tW_EkWGqdJQ9WzedaWuzOYS9LCwzIsPRV2RROsMRDdfIEgyEqf7w1cQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"enrolStartDate\": \"2020-03-18\",\n        \"enrolEndDate\": \"2020-03-30\"\n    },\n    {\n        \"enrolStartDate\": \"2020-04-11\",\n        \"enrolEndDate\": \"2020-04-30\"\n    },\n    {\n        \"enrolStartDate\": \"2020-05-03\",\n        \"enrolEndDate\": \"2020-05-30\"\n    },\n    {\n        \"enrolStartDate\": \"2020-05-03\",\n        \"enrolEndDate\": \"2020-05-30\"\n    }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/students/980/enrollment/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"students",
+								"980",
+								"enrollment",
+								""
+							]
+						},
+						"description": "Student can add up to 4 enrollments"
+					},
+					"response": []
+				},
+				{
+					"name": "Load Enrollment By Student",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqaW0iLCJyb2xlcyI6WyJST0xFX1NUVURFTlQiXSwiaXNzIjoid2luZC1ncm91cCIsImV4cCI6MTU4NTQxODA5NSwiaWF0IjoxNTg0NTU0MDk1fQ.jCa8gtM5JiQeTFgcQLqYfv-IFLY2PGuN7pOhbqr-Fns350GaJaj8dIY3ogqiPx7G7DaOvwvbxV7N3ovEDPwN8g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/students/980/enrollment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"students",
+								"980",
+								"enrollment"
+							]
+						},
+						"description": "Load Enrollment By Student"
+					},
+					"response": []
+				},
+				{
+					"name": "Load Student Enrollment By Enrollment Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/students/980/enrollment/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"students",
+								"980",
+								"enrollment",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Courses",
+					"item": [
+						{
+							"name": "Add Course",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwaGlsIiwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJpc3MiOiJ3aW5kLWdyb3VwIiwiZXhwIjoxNTg1MzgwMDE2LCJpYXQiOjE1ODQ1MTYwMTZ9.PMoshzdpQIjji8iMGugr7ukq5xHzPc9C09EQhSdtCwp6FC4VWhH58zqrUsw6iVu75jXZefVvoEJ0ZGuP8rhuqw",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"code\":\"CS544\",\n\t\"name\":\"Enterprise Architecture\",\n\t\"description\":\"Spring and Hibernate\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/courses",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"courses"
+									]
+								},
+								"description": "Add a new Course"
+							},
+							"response": []
+						},
+						{
+							"name": "Courses",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwaGlsIiwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJpc3MiOiJ3aW5kLWdyb3VwIiwiZXhwIjoxNTg1MzgwMDE2LCJpYXQiOjE1ODQ1MTYwMTZ9.PMoshzdpQIjji8iMGugr7ukq5xHzPc9C09EQhSdtCwp6FC4VWhH58zqrUsw6iVu75jXZefVvoEJ0ZGuP8rhuqw",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/courses/CS544",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"courses",
+										"CS544"
+									]
+								},
+								"description": "Courses List"
+							},
+							"response": []
+						},
+						{
+							"name": "Update Course",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwaGlsIiwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJpc3MiOiJ3aW5kLWdyb3VwIiwiZXhwIjoxNTg1MzgwMDE2LCJpYXQiOjE1ODQ1MTYwMTZ9.PMoshzdpQIjji8iMGugr7ukq5xHzPc9C09EQhSdtCwp6FC4VWhH58zqrUsw6iVu75jXZefVvoEJ0ZGuP8rhuqw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\t\n\t\"id\": 1,\n\t\"code\":\"CS544\",\n\t\"name\":\"Enterprise Architecture\",\n\t\"description\":\"Spring and Hibernatespjil\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/courses/CS544",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"courses",
+										"CS544"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "Courses Endpint\n",
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Offering",
+					"item": [
+						{
+							"name": "Add offering",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"courseId\": \"CS544\",\n    \"blockId\":\"203\",\n    \"sections\":[1]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/offerings",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"offerings"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edit Offering",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/offerings/${offerringId}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"offerings",
+										"${offerringId}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "View All Offerings",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/offerings",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"offerings"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Enrollment (Admin)",
+					"item": [
+						{
+							"name": "Update Enrollment",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer  ${token}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"enrolStartDate\":\"2020-03-17\",\n\t\"enrolEndDate\":\"2020-03-30\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/enrollments/1/980",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"enrollments",
+										"1",
+										"980"
+									]
+								},
+								"description": "Update an enrollment (Admin/Faculty)"
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Block",
+					"item": [
+						{
+							"name": "Add Block",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwaGlsIiwicm9sZXMiOlsiUk9MRV9BRE1JTiIsIlJPTEVfRkFDVUxUWSIsIlJPTEVfU1RVREVOVCJdLCJpc3MiOiJ3aW5kLWdyb3VwIiwiZXhwIjoxNTg1NDEwNTA1LCJpYXQiOjE1ODQ1NDY1MDV9.88zgxDMw1EObD8j0x8qWSmqg-TLcA8khq3o5lEZr_7gDoUYsKd5Qrf0mhUYBwkSQd5pgJFaf3PrhxFL5-XtwrQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"code\":\"203\",\n\t\"name\":\"Block A\",\n\t\"semester\":\"Fall\",\n\t\"blockSeqNum\":\"3949\",\n\t\"startDate\":\"2020-03-18\",\n\t\"endDate\":\"2020-04-18\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/blocks",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"blocks"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get a Block",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwaGlsIiwicm9sZXMiOlsiUk9MRV9BRE1JTiIsIlJPTEVfRkFDVUxUWSIsIlJPTEVfU1RVREVOVCJdLCJpc3MiOiJ3aW5kLWdyb3VwIiwiZXhwIjoxNTg1NDEwNTA1LCJpYXQiOjE1ODQ1NDY1MDV9.88zgxDMw1EObD8j0x8qWSmqg-TLcA8khq3o5lEZr_7gDoUYsKd5Qrf0mhUYBwkSQd5pgJFaf3PrhxFL5-XtwrQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://localhost:8080/blocks/203",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"blocks",
+										"203"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "Admin Adding new Blocks",
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Sections",
+					"item": [
+						{
+							"name": "Add Section",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"enrollmentCodes\":[1,2],\n\t\"facultyId\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/sections",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"sections"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Faculty",
+			"item": [
+				{
+					"name": "View All Enrollment of a student",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmtoeWEiLCJyb2xlcyI6WyJST0xFX0ZBQ1VMVFkiXSwiaXNzIjoid2luZC1ncm91cCIsImV4cCI6MTU4NTQyOTgyMiwiaWF0IjoxNTg0NTY1ODIyfQ.4czi5QKdpns0Vb01rYWIGVxUpXqyUzJ19vtiBTxji5nYP6jLxou2oyEChp_BLTF_TnaLVXs25rfNbq-I9-Au8w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/students/67/enrollment/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"students",
+								"67",
+								"enrollment",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "View Student Enrollment By using enrollment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqaW0iLCJyb2xlcyI6WyJST0xFX1NUVURFTlQiXSwiaXNzIjoid2luZC1ncm91cCIsImV4cCI6MTU4NTQxODA5NSwiaWF0IjoxNTg0NTU0MDk1fQ.jCa8gtM5JiQeTFgcQLqYfv-IFLY2PGuN7pOhbqr-Fns350GaJaj8dIY3ogqiPx7G7DaOvwvbxV7N3ovEDPwN8g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/students/980/enrollment/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"students",
+								"980",
+								"enrollment",
+								"1"
+							]
+						},
+						"description": "Load Enrollment By Student"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"phil\",\n    \"password\": \"super\"\n}\n\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

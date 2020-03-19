@@ -1,0 +1,24 @@
+# MySQL Database Connection
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create
+  datasource:
+    url: jdbc:mysql://localhost:3306/wind
+    username: root # your mysql username
+    password:  # you can provide your mysql password
+    initializationMode: always # loading data.sql
+
+# JWT secrets for signing tokens
+com:
+   group3:
+      courseenrollment:
+         jwt:
+            secret: windteamphilipgideonyusefmohammedankyhajim
+            expiration-time: 864_000_000 # 10 days for the mean time
+            token-prefix: "Bearer "
+            header-string: "Authorization"
+            issuer: 'wind-group'
+         enrollmentLimitPerStudent: 4 # Enrollment Limit Per Student
+         appDomainName: 'miu.edu'
+
