@@ -1,0 +1,29 @@
+Spring Security
+
+- works at the servlet api
+- uses servlet filters
+ 	- csrf
+	- username_password filter (authentication)
+		once verified, generate token to use thru the web_service return back the user
+	- basic authentication filter (validates per role)
+		checks the token and decodes it
+	- Security Context Folder contains all the user's information
+	- Spring security installs a Filter chain proxy
+
+	In JWT we inherit Username filter and modify its behavior for your own interests
+- in an enterprise project, use an authorization server, it generates a token that is used
+ to access the web services
+- Authentication manager (implement user detail)
+
+- JWT sending messages and authorization and authentication in json format
+- 3 sections 
+	Header - 
+	Payload - Data - Claims - 
+	Signation - Encryption (of header and payload) ,Decription
+- Status code
+	Response Body returns data
+	Request Entity helps to send status codes like 404, 201
+
+
+* Admin update course 403
+* 
