@@ -22,7 +22,7 @@ target/
 mvnw
 mvnw.cmd
 course-enrollment.iml
-pom.xml
+#pom.xml
 
 
 ### NetBeans ###
